@@ -19,6 +19,16 @@
   border-radius: 8px;
   margin-bottom: 10px;
   background-color: var(--card-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.pokemonCard > img {
+  width: 50%;
+  height: 350px;
 }
 
 .pokemonList {
