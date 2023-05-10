@@ -6,6 +6,7 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import { Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage/MainPage';
 import Pokemon from './pages/PokemonInfo/Pokemon';
+import ClassComponent from './components/ClassComponent/ClassComponent';
 
 function App() {
   const [ theme, setTheme ] = useState('light');
@@ -56,14 +57,14 @@ function App() {
         <Route path='/about-us' element={<AboutUs />}  />
         <Route  path='/pokemon/:name' element={<Pokemon />} />
       </Routes>
+      <div className='pokemonList'>
+      {pokemonList.map(pokemon => <PokemonCard key={pokemon.name} pokemon={pokemon} />)}
       <Pagination 
         page={page} 
         count={count}
         handleNext={handleNext}
         handlePrev={handlePrev}
       />
-      <div className='pokemonList'>
-      {pokemonList.map(pokemon => <PokemonCard key={pokemon.name} pokemon={pokemon} />)}
       </div>
       </div>
     </div>
